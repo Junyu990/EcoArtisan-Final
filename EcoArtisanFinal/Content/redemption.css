@@ -1,0 +1,60 @@
+﻿body {
+}
+/* Redemption Page Styles */
+
+.redemption-container {
+    margin-top: 0px;
+}
+
+.rewardtext {
+    color: #6eb67f;
+}
+
+.threeleaf {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
+}
+
+.my-rewards {
+    color: #6eb67f;
+    font-size: 20px;
+}
+
+.reward-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.reward-details {
+    padding: 20px;
+}
+
+.reward-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.reward-description {
+    font-size: 16px;
+}
+
+.redemption-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tableHead {
+    background-color: #319e88; /* Darker background for headers */
+    padding: 10px 0;
+    color: white;
+}
+
+.table-contain {
+    background-color: #e6e8e6; /* Dark background for the table */
+    color: black; /* Light text color */
+    border-collapse: collapse; /* Collapse borders for a clean look */
+    border-radius: 8px !important; /* Rounded corners for outer table */
+    overflow: hidden; /* Hide the overflow to maintain border radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}

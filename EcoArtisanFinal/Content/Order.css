@@ -1,0 +1,120 @@
+﻿.header {
+    display: flex;
+    font-size: 2.6rem;
+    font-weight: bolder;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.accordion {
+    display: flex;
+    padding: 2rem !important;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.5px solid #eee !important;
+    border-radius: 1rem;
+    font-size: 15px;
+    margin-bottom: 4rem !important;
+    width: 100%;
+    min-width: 60rem;
+}
+
+.table-style {
+    display: flex;
+    flex: 1;
+}
+
+table {
+    width: 80%;
+    min-width: 40rem;
+}
+
+    table td, table th {
+        text-align: left;
+        padding: 8px !important;
+    }
+
+.buttons {
+    display: flex;
+    width: 20%;
+    gap: 5rem;
+}
+
+.button-style {
+    border: 0.5px solid #eee !important;
+    border-radius: 1rem;
+    background-color: transparent;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    min-height: 4rem;
+}
+
+.download, .download:hover, .download:focus {
+    display: flex;
+    border: 0.5px solid #eee !important;
+    align-items: center;
+    color: var(--black);
+    padding: 0.5rem !important;
+    border-radius: 1rem;
+    text-decoration: none !important;
+}
+
+.fa-angle-down, .fa-angle-up {
+    border: none !important;
+}
+
+.panel {
+    display: none;
+    overflow: hidden;
+    width: 88%;
+    margin: 0 auto !important;
+    border: none !important;
+    transition: height 0.2s ease-out, opacity 0.2s ease-out;
+    margin-bottom: 1rem !important;
+    box-shadow: none;
+}
+
+.order-item {
+    display: flex;
+    margin-bottom: 5rem !important;
+    gap: 10%;
+}
+
+.imgProduct {
+    height: 20vh;
+    border-radius: 1rem;
+}
+
+.item-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.name-impact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem !important;
+}
+
+.view-qty-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto !important;
+}
+
+a {
+    text-decoration: none;
+    color: darkslateblue;
+}
+
+    a:hover {
+        color: darkslateblue;
+        text-decoration: none;
+    }
+
+.qty-total {
+    display: flex;
+    gap: 4rem;
+}

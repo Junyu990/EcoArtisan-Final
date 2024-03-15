@@ -1,0 +1,185 @@
+﻿
+
+.rewards {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.reward-point-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leaf-and-reward {
+    display: flex;
+    align-items: center;
+}
+
+.ecocoin {
+    width: 2rem;
+    height: 2rem;
+}
+
+.threeleaf {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
+}
+
+.points {
+    width: 15rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    color: gold;
+}
+
+.my-rewards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 11rem;
+    height: 2.5rem;
+    background-color: var(--white);
+    border-radius: 1.5rem;
+    box-shadow: var(--box-shadow);
+    font-size: 1.3rem;
+}
+
+.rewards-by-category {
+    display: flex;
+    gap: 2%;
+}
+
+.rewards-by-category-card {
+    height: 2rem;
+    width: auto;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #b4d2e370;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+}
+
+.rewards-item {
+    display: grid;
+    grid-template-columns: 17rem 17rem 17rem 17rem 17rem;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.rewards-item-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 1rem;
+    background-color: #f1f1f1;
+    border-radius: 0.8rem;
+    box-shadow: var(--box-shadow);
+    width: 16rem;
+}
+
+.rewards-item-card-picture-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rewards-item-card-picture {
+    display: flex;
+    width: 10rem;
+    height: 9rem;
+}
+
+.rewards-item-card-description {
+    padding-top: 0.5rem;
+}
+
+.rewards-item-card-name-and-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.rewards-item-card-amount {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.material-symbols-outlined {
+    font-size: 1rem;
+}
+
+.rewards-item-card-amount-number {
+    font-size: 1.2rem;
+}
+
+.rewards-item-card-points-and-reedeem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.yellow-points {
+    color: gold;
+}
+
+.grey-points {
+    color: lightgrey;
+}
+
+.rewards-item-card-reedeem {
+    padding: 0 0.4rem;
+    border-radius: 1rem;
+}
+
+/* Style for the redeem button */
+.btn-redeem {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    padding: 4px 8px; /* Padding */
+    cursor: pointer; /* Cursor style */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+    /* Hover effect for the redeem button */
+    .btn-redeem:hover {
+        background-color: #0056b3; /* Darker blue background color on hover */
+    }
+
+/*---------------------------------------------------------------*/
+
+.category-filters {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.category #category-filters {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+    .category #category-filters li {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 15px 10px 15px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #444444;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .category #category-filters li:hover,
+        .category #category-filters li.filter-active {
+            color: #ff7f5d;
+        }
+
+            .category #category-filters li.filter-active::before,
+            .category #category-filters li.filter-active::after {
+                color: #ff7f5d;
+            }

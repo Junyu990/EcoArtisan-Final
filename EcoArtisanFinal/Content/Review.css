@@ -1,0 +1,129 @@
+﻿body {
+}
+
+.reviewCard {
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    background-color: #fcf8eb;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+    .reviewCard h4 {
+        font-size: 1.6rem;
+    }
+
+.review_cmt {
+    font-size: 1rem;
+    font-weight: lighter;
+    color: dimgrey;
+}
+
+.revDesc {
+    padding: 10px;
+}
+
+.prodDetails {
+    border-radius: 8px;
+    background-color: #f6f3e7;
+    padding: 25px;
+    width: 40%;
+    box-shadow: 2px;
+}
+
+
+.reviewForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    margin: 0 auto;
+}
+
+.img_holder {
+    overflow: hidden;
+}
+
+    .img_holder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This ensures the image covers the entire container */
+    }
+
+.reviewDesc {
+    flex-direction: column;
+}
+
+.actionbtn {
+    display: flex;
+}
+
+.editBtn {
+    margin-right: 10px;
+}
+
+.reviews {
+    text-align: center; /* Center-align the content */
+}
+
+.reviewCardForUser {
+    display: flex; /* Display review cards in a row */
+    text-align: left; /* Align text inside review cards to the left */
+    margin: 10px; /* Add some margin around each review card */
+    padding: 10px; /* Add some padding inside each review card */
+    border: 1px solid #ccc; /* Add border for visual separation */
+    width: 70%;
+}
+
+
+.revimg_holder {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.small_image {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+    margin: auto; /* Center the image vertically */
+}
+
+.mainCard {
+    width: 700px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f6f3e7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.img_holder img {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.cardLeft {
+    width: 50%; /* Take up half of the mainCard's width */
+    padding: 10px;
+}
+
+.prodD {
+    width: 50%; /* Take up half of the mainCard's width */
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.userReview {
+    margin-top: 50px;
+}

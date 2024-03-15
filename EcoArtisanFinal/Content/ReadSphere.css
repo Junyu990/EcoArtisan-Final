@@ -1,0 +1,147 @@
+﻿body {
+    background-color: #f8f8f8; /* A light background to keep things clean */
+    color: #000; /* Reset font color to black */
+    font-family: 'Arial', sans-serif; /* A simple, readable font */
+    text-align: center; /* Center align the text */
+}
+
+/* Style the headings */
+h2 {
+    color: #000; /* Reset font color to black for consistency */
+    font-size: 1.5em;
+    margin-bottom: 0.5em; /* Spacing between headings and form elements */
+    font-weight: normal; /* Option to make headings less bold */
+}
+
+/* Center the content area and add a pop effect */
+#BodyContent {
+    width: 60%; /* Adjust the width as needed */
+    max-width: 800px; /* Or your preferred max width */
+    margin: 100px auto; /* Increase top margin to give a pop effect */
+    padding: 40px; /* Increase padding to stand out */
+    background-color: #fff; /* A white background for the content area */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* A more pronounced shadow for pop effect */
+    border-radius: 10px; /* Rounded corners for a smoother look */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for pop effect */
+}
+
+    #BodyContent:hover {
+        transform: scale(1.05); /* Slightly increase size on hover for emphasis */
+    }
+
+/* Now centering and styling form elements */
+.form-control {
+    box-shadow: none;
+    margin: 0 auto 20px auto; /* Center form elements and add bottom spacing */
+    display: block; /* Ensure full width */
+    width: 90%; /* Adjust width to fit inside the centered content */
+    /* The rest remains unchanged */
+}
+
+.aspNetButtons {
+    display: block; /* Stack buttons */
+    width: 90%; /* Match the width of form-control elements */
+    margin: 10px auto; /* Center the button and add margin for spacing */
+    padding: 10px;
+    background-color: #5cb85c; /* A green background for visibility */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+}
+
+    .aspNetButtons:hover {
+        background-color: #4cae4c; /* Darker green on hover for interaction feedback */
+    }
+
+/* To emphasize the form as an advertisement, add a title above it with a call-to-action */
+#formTitle {
+    font-size: 2em; /* Larger text for the title */
+    color: #333;
+    margin-bottom: 20px; /* Spacing before the form starts */
+}
+
+/* Additional global centering for all content */
+.centered-content {
+    text-align: center; /* Center all content within the div */
+}
+
+.centered-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.panel {
+    width: auto; /* Adjust the width of the panel as needed */
+    display: inline-block; /* This will allow you to center the panel using text-align */
+    margin: 0 auto; /* This will center the panel if the width is less than 100% */
+}
+
+/* Style modifications for the RadioButtonList and CheckBoxList */
+.rbl_SphereMat, .cbl_SphereColour {
+    display: inline-block; /* Align the list items next to each other */
+    margin: 0; /* Remove default margins */
+}
+
+/* Override previous styles for panels to align content to the center */
+.panel {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center; /* Center align panel contents */
+    display: inline-block; /* Allows the panel to shrink-wrap its contents */
+    margin: 0 auto; /* Center the panel itself */
+}
+
+    /* Ensure RadioButtonList and CheckBoxList are also centered within the panel */
+    .panel .rbl_SphereMat,
+    .panel .cbl_SphereColour {
+        display: inline-block; /* Display inline-block for horizontal centering */
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+        text-align: left; /* Align the text inside the list to the left */
+    }
+
+    /* Centering the GroupingText of the panel */
+    .panel fieldset {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
+
+    .panel legend {
+        width: auto;
+        margin: 0 auto; /* Center the legend text */
+        padding: 0 5px;
+    }
+
+/* Aligning the hyperlink to the buttons */
+#HyperLinkManageSphere {
+    background-color: #337ab7; /* Different color to stand out as a link */
+    padding: 10px 15px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none; /* Removes underline from hyperlinks */
+}
+
+    #HyperLinkManageSphere:hover {
+        background-color: #286090; /* Darker on hover */
+    }
+
+#MainContent_ddl_SphereSize {
+    margin-bottom: 2em;
+}
+
+@media (max-width: 767px) {
+    #BodyContent {
+        width: 95%; /* On smaller screens, make the form wider */
+        margin: 50px auto; /* Less margin on the top for smaller screens */
+        padding: 20px; /* Less padding on smaller screens */
+    }
+}

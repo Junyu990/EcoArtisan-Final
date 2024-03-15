@@ -1,0 +1,32 @@
+Error at 2/15/2024 8:06:46 AM:
+Exception Type: iText.Kernel.Exceptions.PdfException
+Message: Unknown PdfException.
+Stack Trace:    at iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor()
+   at iText.Kernel.Pdf.PdfWriter..ctor(Stream os, WriterProperties properties)
+   at iText.Kernel.Pdf.PdfWriter..ctor(Stream os)
+   at EcoArtisanFinal.OrderHistory.GeneratePdfReceipt(String shippingName, Int64 totalAmount, String cardLast4, String cardBrand, String shippingAddress, String currency, StripeList`1 lineItems) in C:\Users\laugu\Downloads\EcoArtisanFinal\EcoArtisanFinal\OrderHistory.aspx.cs:line 400
+Inner Exception: Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator
+Inner Exception Stack Trace:    at iText.Bouncycastleconnector.BouncyCastleDefaultFactory.CreateIDigest(String hashAlgorithm)
+   at iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor()
+----------------------------------------
+Error at 2/15/2024 8:17:53 AM:
+Exception Type: iText.Kernel.Exceptions.PdfException
+Message: Unknown PdfException.
+Stack Trace:    at iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor()
+   at iText.Kernel.Pdf.PdfWriter..ctor(Stream os, WriterProperties properties)
+   at iText.Kernel.Pdf.PdfWriter..ctor(Stream os)
+   at EcoArtisanFinal.OrderHistory.GeneratePdfReceipt(String shippingName, Int64 totalAmount, String cardLast4, String cardBrand, String shippingAddress, String currency, StripeList`1 lineItems) in C:\Users\laugu\Downloads\EcoArtisanFinal\EcoArtisanFinal\OrderHistory.aspx.cs:line 400
+Inner Exception: Either com.itextpdf:bouncy-castle-adapter or com.itextpdf:bouncy-castle-fips-adapter dependency must be added in order to use BouncyCastleFactoryCreator
+Inner Exception Stack Trace:    at iText.Bouncycastleconnector.BouncyCastleDefaultFactory.CreateIDigest(String hashAlgorithm)
+   at iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor()
+----------------------------------------
+Error at 2/15/2024 8:22:11 AM:
+Exception Type: iText.Kernel.Exceptions.PdfException
+Message: Unknown PdfException.
+Stack Trace:    at iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor()
+   at iText.Kernel.Pdf.PdfWriter..ctor(Stream os, WriterProperties properties)
+   at iText.Kernel.Pdf.PdfWriter..ctor(Stream os)
+   at EcoArtisanFinal.OrderHistory.GeneratePdfReceipt(String shippingName, Int64 totalAmount, String cardLast4, String cardBrand, String shippingAddress, String currency, StripeList`1 lineItems) in C:\Users\laugu\Downloads\EcoArtisanFinal\EcoArtisanFinal\OrderHistory.aspx.cs:line 400
+Inner Exception: The type initializer for 'iText.Bouncycastleconnector.BouncyCastleFactoryCreator' threw an exception.
+Inner Exception Stack Trace:    at iText.Kernel.Pdf.SmartModePdfObjectsSerializer..ctor()
+----------------------------------------

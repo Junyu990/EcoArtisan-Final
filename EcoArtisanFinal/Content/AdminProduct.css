@@ -1,0 +1,14 @@
+﻿.btnAddProd {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #6db67d;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+    .btnAddProd:hover {
+        background-color: #4c8c5a; /* Darker shade */
+    }
+
+body {
+}

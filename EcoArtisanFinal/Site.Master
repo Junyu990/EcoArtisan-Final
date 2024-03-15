@@ -1,0 +1,245 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="EcoArtisanFinal.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - EcoArtisan</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Content/root.css") %>?v=<%= DateTime.Now.Ticks %>" />
+    <link rel="stylesheet" type="text/css" href="../Content/chatbot.css?v=<%= DateTime.Now.Ticks %>"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    <!-- Additional head content from content pages will be placed here -->
+    <!-- You can add other meta tags, CSS links, and script references here as needed -->
+    </asp:ContentPlaceHolder>
+
+
+</head>
+    <body>
+        <form runat="server">
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                    <%--Framework Scripts--%>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <%--Site Scripts--%>
+                </Scripts>
+            </asp:ScriptManager>
+
+            <div class="navbar navbar-inverse navbar-fixed-top navi">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="~/" runat="server">EcoArtisan</a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a runat="server" href="~/">Home</a></li>
+                            <li><a runat="server" href="~/Products">Products</a></li>
+                            <li><a runat="server" href="~/SphereMaker">YourArtisan!</a></li>
+                            <li><a runat="server" href="~/About">About</a></li>
+                            <li><a runat="server" href="~/Contact">Contact</a></li>
+                        </ul>
+                            <% if (Session["UserID"] != null) { %>
+                           
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="margin-left: 10px;">
+                                    <button type="button" class="btn btn-default navbar-btn">
+                                        <a href="Profile.aspx" style="text-decoration:none;color:black;">
+                                            Welcome, <%: Session["UserName"] %>!
+                                        </a>
+                                    </button>
+                                </li>
+                                <li style="margin-left: 10px;">
+                                    <asp:button ID="btnLogout" runat="server" Text="Log Out" CssClass="btn btn-danger navbar-btn" OnClick="btnLogout_Click"/>
+                                </li>
+                                <% if (Session["Role"].ToString() == "Admin") { %>
+                                    <!-- HTML code for Admin role -->
+                                        <li style="margin-left: 10px;">
+                                            <asp:Button ID="btnSwitchInterface" runat="server" Text="Switch Interface" 
+                                                 CssClass="btn btn-warning navbar-btn"
+                                                OnClientClick="return confirm('Are you sure you want to switch interfaces?');" OnClick="btnSwitchInterface_Click"/>
+                                        </li>
+                                <% } %>
+                            </ul> 
+                            <div class="nav navbar-nav navbar-right">
+                                <a href="~/cart"  runat="server" class="btn btn-link" style="color:black; font-size: 26px;">
+                                    <i class="icon fas fa-shopping-cart"></i>
+                                </a>
+                                
+                                <a href="~/CustomerWishlist"  runat="server" class="btn btn-link" style="color:black; font-size: 26px;">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                                <a href="~/Profile" runat="server" class="btn btn-link">
+                                <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/hrjifpbq.json"
+                                        trigger="hover"
+                                        style="width:35px;height:35px">
+                                    </lord-icon>
+                                </a>
+                            </div>
+                        <% } else { %>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li style="margin-left: 10px;">
+                                    <button type="button" class="btn btn-default navbar-btn" onclick="location.href='/SignUp'">Sign Up!</button>
+                                </li>
+                                <li style="margin-left: 10px;">
+                                    <button type="button" class="btn btn-default navbar-btn" onclick="location.href='/Login'">Login</button>
+                                </li>
+                            </ul>
+                        <% } %>
+                   
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="container body-content">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <hr />
+                </div>
+                <!-- Footer -->
+                <footer>
+                    <div class="social-icons">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <!-- Add more social icons as needed -->
+                    </div>
+                    <p>&copy; 2024 EcoArtisan. All rights reserved.</p>
+                </footer>
+            </div>
+
+            <asp:ContentPlaceHolder ID="MainContent2" runat="server">
+                    <link rel="stylesheet" type="text/css" href='<%= ResolveUrl("~/Content/chatbot.css") %>?v=<%= DateTime.Now.Ticks %>' />
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+                    <div id="chatbotOpener" onclick="toggleChatbotContainer()">
+                        <img id="chatbotImgOpener" src='<%= ResolveUrl("~/Content/Images/Chatbot.png") %>' />
+                    </div>
+                    <div ID="chatbotContainer">
+                        <div id="chatbotHeader">
+                            <img id="chatbotImg" src='<%= ResolveUrl("~/Content/Images/Chatbot.png") %>' />
+                            <div>
+                                Sage</div>
+                            <div class="fas fa-minus" onclick="toggleChatbotContainer()">
+                            </div>
+                        </div>
+                        <div id="chatbotHistory">
+                        </div>
+                        <div id="chatbotInputWrapper">
+                            <div id="chatbotInput">
+                                <asp:TextBox ID="txtUserInput" TextMode="MultiLine" Rows="1" runat="server"></asp:TextBox>
+                                <button type="button" id="btn_Send" runat="server" class="fa-solid fa-paper-plane">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+                    <script type="text/javascript">
+                        function toggleChatbotContainer() {
+                            var chatbotContainer = $('#chatbotContainer');
+                            chatbotContainer.slideToggle();
+                            $('#chatbotOpener').toggle();
+                        }
+
+                        var textbox = document.getElementById("<%= txtUserInput.ClientID %>");
+
+                        textbox.addEventListener("input", increaseHeight);
+                        textbox.addEventListener("keydown", function (e) {
+                            if (e.key === "Backspace") {
+                                decreaseHeight();
+                            }
+                        });
+
+                        function increaseHeight() {
+                            var maxHeight = 50;
+                            var textbox = document.getElementById("<%= txtUserInput.ClientID %>");
+                            var wrapper = textbox.closest("#MainContent2_txtUserInput");
+
+                            if (wrapper) {
+                                textbox.style.height = "auto";
+                                var scrollHeight = textbox.scrollHeight;
+
+                                if (scrollHeight > maxHeight) {
+                                    textbox.style.height = maxHeight + "px";
+                                } else {
+                                    textbox.style.height = scrollHeight + "px";
+                                }
+                            }
+                        }
+
+                        function decreaseHeight() {
+                            var wrapper = textbox.closest("#MainContent2_txtUserInput");
+                            if (wrapper) {
+                                wrapper.style.height = "";
+                            }
+                        }
+
+                        $(document).ready(function () {
+                            $('#MainContent2_btn_Send').click(function () {
+                                var userInput = $('#MainContent2_txtUserInput').val();
+                                if (userInput) {
+                                    $('#MainContent2_txtUserInput').val('');
+                                    var chatHistory = $('#chatbotHistory'); // Use the chatbotHistory directly
+                                    chatHistory.append('<div id="message-container-right"><div id="me">' + userInput + '</div><div id="time-right">' + getTimestamp() + '</div></div>');  // Displaying user input
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "<%= ResolveUrl("~/cart.aspx/SendMessageAsync") %>",
+                                        data: JSON.stringify({ message: userInput }),
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "json",
+                                        success: function (response) {
+                                            chatHistory.append('<div id="message-container-left"><div id="bot">' + response.d + '</div><div id="time-left">' + getTimestamp() + '</div></div>');
+                                            chatHistory.scrollTop(chatHistory[0].scrollHeight);
+                                        },
+                                    });
+                                }
+                            });
+
+                            function getTimestamp() {
+                                var now = new Date();
+                                var hours = now.getHours().toString().padStart(2, '0');
+                                var minutes = now.getMinutes().toString().padStart(2, '0');
+                                return hours + ':' + minutes;
+                            }
+
+                            // Additional code to hide #chatbotOpener when the chatbotContainer is visible initially
+                            if ($('#chatbotContainer').is(':visible')) {
+                                $('#chatbotOpener').hide();
+                            }
+                        });
+                    </script>
+                </asp:ContentPlaceHolder>
+        </form>
+    </body>
+</html>
